@@ -19,21 +19,7 @@ Pulley is a focused menu bar companion for engineers who live in pull requests b
 
 It is intentionally quiet. Pulley does not turn every GitHub event into noise. It waits for momentum-changing moments, then gives you a small, useful signal.
 
-```text
-╭─────────────────────────────────────────────────────╮
-│    File  Edit  View  Window              Pulley ◐  │
-╰──────────────────────────────────────────┬──────────╯
-                                           │
-                            ╭──────────────────────────────╮
-                            │ Pulley                   ● 3 │
-                            ├──────────────────────────────┤
-                            │ ✓ Ready to Ship      #842    │
-                            │ ! CI Needs Attention #856    │
-                            │ → Merge Queue        #861    │
-                            ├──────────────────────────────┤
-                            │ synced now        quiet mode │
-                            ╰──────────────────────────────╯
-```
+<img width="983" height="772" alt="Screenshot 2026-05-04 at 14 58 30" src="https://github.com/user-attachments/assets/f1a9ced1-544a-421f-80e1-6991862d36c2" />
 
 ## Why Pulley exists
 
