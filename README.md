@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/readme-hero.svg" alt="Pulley — a calmer way to keep pull requests moving" width="100%">
+  <img src="assets/readme-hero.svg" alt="Pulley README hero: a pulley lifting review, CI, and merge queue signals into a quiet macOS menu bar panel" width="100%">
 </p>
 
 <h1 align="center">Pulley</h1>
 
 <p align="center">
-  <strong>A small wheel in your macOS menu bar that lifts pull requests out of the noise.</strong>
+  <strong>A quiet macOS menu bar app for pull requests that need your attention.</strong>
 </p>
 
 <p align="center">
@@ -15,7 +15,7 @@
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/License-MIT-46a758?style=for-the-badge&labelColor=08090a"></a>
 </p>
 
-Pulley is a focused menu bar companion for engineers who live in pull requests but do not want to live in GitHub tabs. It watches the signals that change what you should do next: human reviews, CI failures, pending checks, merge queue movement, review requests, and approvals.
+Pulley is a focused menu bar companion for engineers who live in pull requests but do not want to live in GitHub tabs. It lifts the signals that change what you should do next: human reviews, CI failures, pending checks, merge queue movement, review requests, and approvals.
 
 It is intentionally quiet. Pulley does not turn every GitHub event into noise. It waits for momentum-changing moments, then gives you a small, useful signal.
 
@@ -28,8 +28,8 @@ It is intentionally quiet. Pulley does not turn every GitHub event into noise. I
                             │ Pulley                   ● 3 │
                             ├──────────────────────────────┤
                             │ ✓ Ready to Ship      #842    │
-                            │ ● CI Needs Attention #856    │
-                            │ ⇄ Merge Queue        #861    │
+                            │ ! CI Needs Attention #856    │
+                            │ → Merge Queue        #861    │
                             ├──────────────────────────────┤
                             │ synced now        quiet mode │
                             ╰──────────────────────────────╯
@@ -39,7 +39,7 @@ It is intentionally quiet. Pulley does not turn every GitHub event into noise. I
 
 Pull requests do not usually fail because you forgot how to merge. They stall because the next signal is buried: a stale review, a failing check, a queue position, a human approval, a requested change.
 
-Pulley keeps those signals close without making them loud.
+Pulley keeps those signals close without making them loud. The brand is the product promise: a small mechanism, a little mechanical advantage, and just enough motion to keep work moving.
 
 ## What it watches
 

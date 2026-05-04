@@ -1,122 +1,139 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
-  <title id="title">Pulley</title>
-  <desc id="desc">A stylized macOS menu bar pull request monitor with status cards, merge queue signals, and alert toasts.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+  <title id="title">Pulley README hero</title>
+  <desc id="desc">A quiet macOS menu bar pull request monitor shown as a pulley lifting review, CI, and merge queue signals into a focused menu bar panel.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="520" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#06070a"/>
-      <stop offset="0.52" stop-color="#0b0f16"/>
-      <stop offset="1" stop-color="#141018"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05070a"/>
+      <stop offset="0.52" stop-color="#0a0f16"/>
+      <stop offset="1" stop-color="#11151f"/>
     </linearGradient>
     <radialGradient id="blueGlow" cx="50%" cy="50%" r="50%">
-      <stop stop-color="#60a5fa" stop-opacity="0.55"/>
+      <stop stop-color="#60a5fa" stop-opacity="0.48"/>
       <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="violetGlow" cx="50%" cy="50%" r="50%">
-      <stop stop-color="#a78bfa" stop-opacity="0.45"/>
-      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#46a758" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#46a758" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="titleGrad" x1="214" y1="0" x2="530" y2="0" gradientUnits="userSpaceOnUse">
+    <linearGradient id="ropeGrad" x1="84" y1="82" x2="700" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dbeafe"/>
+      <stop offset="0.42" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#46a758"/>
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#151a24"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="96" y1="0" x2="458" y2="0" gradientUnits="userSpaceOnUse">
       <stop stop-color="#f8fafc"/>
-      <stop offset="0.5" stop-color="#bfdbfe"/>
-      <stop offset="1" stop-color="#ddd6fe"/>
+      <stop offset="0.58" stop-color="#c7dcff"/>
+      <stop offset="1" stop-color="#93c5fd"/>
     </linearGradient>
-    <linearGradient id="ropeGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#60a5fa"/>
-      <stop offset="0.48" stop-color="#46a758"/>
-      <stop offset="1" stop-color="#a78bfa"/>
-    </linearGradient>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.48"/>
+    <filter id="softShadow" x="-18%" y="-18%" width="136%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#000000" flood-opacity="0.5"/>
     </filter>
-    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0v46" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
     </pattern>
   </defs>
 
-  <rect width="1200" height="520" rx="34" fill="url(#bg)"/>
-  <rect width="1200" height="520" rx="34" fill="url(#grid)"/>
-  <circle cx="260" cy="95" r="210" fill="url(#blueGlow)"/>
-  <circle cx="980" cy="426" r="280" fill="url(#violetGlow)"/>
-  <rect x="1" y="1" width="1198" height="518" rx="34" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+  <rect width="1200" height="460" rx="34" fill="url(#bg)"/>
+  <rect width="1200" height="460" rx="34" fill="url(#grid)"/>
+  <circle cx="268" cy="104" r="230" fill="url(#blueGlow)"/>
+  <circle cx="940" cy="380" r="270" fill="url(#greenGlow)"/>
+  <rect x="1" y="1" width="1198" height="458" rx="34" fill="none" stroke="#ffffff" stroke-opacity="0.1"/>
 
-  <g opacity="0.55">
-    <path d="M100 412 C210 326 280 374 366 294 C464 202 560 246 654 170 C744 97 842 144 934 86" fill="none" stroke="#60a5fa" stroke-opacity="0.24" stroke-width="2"/>
-    <path d="M104 438 C224 368 316 418 420 340 C510 272 636 308 736 230 C846 146 944 212 1080 130" fill="none" stroke="#a78bfa" stroke-opacity="0.22" stroke-width="2"/>
-    <circle cx="366" cy="294" r="5" fill="#60a5fa"/>
-    <circle cx="654" cy="170" r="5" fill="#46a758"/>
-    <circle cx="934" cy="86" r="5" fill="#a78bfa"/>
-    <circle cx="420" cy="340" r="5" fill="#f0a000"/>
-    <circle cx="736" cy="230" r="5" fill="#60a5fa"/>
-  </g>
+  <g transform="translate(78 70)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif">
+    <text x="0" y="54" fill="url(#titleGrad)" font-size="60" font-weight="850" letter-spacing="-2.4">Pulley</text>
+    <text x="2" y="91" fill="#b6beca" font-size="20" letter-spacing="0.1">Pull requests, quietly kept in motion.</text>
 
-  <g transform="translate(82 76)">
-    <circle cx="68" cy="68" r="52" fill="#111827" fill-opacity="0.86" stroke="#2a3342" stroke-width="2"/>
-    <circle cx="68" cy="68" r="26" fill="#08090a" stroke="#60a5fa" stroke-opacity="0.72" stroke-width="3"/>
-    <circle cx="68" cy="68" r="7" fill="#dbeafe"/>
-    <path d="M68 16 C172 30 226 94 224 174" fill="none" stroke="url(#ropeGrad)" stroke-width="8" stroke-linecap="round"/>
-    <path d="M68 120 C128 184 198 218 290 204" fill="none" stroke="url(#ropeGrad)" stroke-width="8" stroke-linecap="round" opacity="0.72"/>
-    <circle cx="224" cy="174" r="11" fill="#46a758"/>
-    <circle cx="290" cy="204" r="11" fill="#a78bfa"/>
-  </g>
+    <g transform="translate(0 142)" filter="url(#softShadow)">
+      <rect width="324" height="166" rx="24" fill="#0d1117" stroke="#2b3544"/>
+      <rect x="18" y="18" width="288" height="32" rx="16" fill="#141b27" stroke="#334155"/>
+      <text x="34" y="40" fill="#e5edf8" font-size="14" font-weight="800">incoming PR signals</text>
 
-  <g transform="translate(216 92)">
-    <text x="0" y="54" fill="url(#titleGrad)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif" font-size="64" font-weight="800" letter-spacing="-2.6">Pulley</text>
-    <text x="3" y="91" fill="#9ba1a6" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif" font-size="19" letter-spacing="0.1">a calmer way to keep pull requests moving</text>
-    <g transform="translate(3 122)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif" font-size="14" font-weight="700">
-      <rect x="0" y="0" width="98" height="30" rx="15" fill="#0e2b1a" stroke="#46a758" stroke-opacity="0.45"/>
-      <circle cx="17" cy="15" r="5" fill="#46a758"/>
-      <text x="30" y="20" fill="#7ee29a">reviews</text>
-      <rect x="112" y="0" width="80" height="30" rx="15" fill="#2a1b04" stroke="#f0a000" stroke-opacity="0.5"/>
-      <circle cx="129" cy="15" r="5" fill="#f0a000"/>
-      <text x="142" y="20" fill="#ffd166">CI</text>
-      <rect x="206" y="0" width="132" height="30" rx="15" fill="#0c1c35" stroke="#60a5fa" stroke-opacity="0.5"/>
-      <circle cx="223" cy="15" r="5" fill="#60a5fa"/>
-      <text x="236" y="20" fill="#93c5fd">merge queue</text>
-      <rect x="352" y="0" width="82" height="30" rx="15" fill="#1f1636" stroke="#a78bfa" stroke-opacity="0.5"/>
-      <circle cx="369" cy="15" r="5" fill="#a78bfa"/>
-      <text x="382" y="20" fill="#c4b5fd">toasts</text>
+      <g transform="translate(24 66)">
+        <rect width="276" height="30" rx="15" fill="#0e1b13" stroke="#46a758" stroke-opacity="0.65"/>
+        <circle cx="17" cy="15" r="9" fill="#14251a" stroke="#46a758"/>
+        <path d="M12 15l4 4 7-9" fill="none" stroke="#7ee29a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="38" y="20" fill="#d9fbe2" font-size="13" font-weight="750">review approved</text>
+      </g>
+
+      <g transform="translate(24 104)">
+        <rect width="276" height="30" rx="15" fill="#221606" stroke="#f0a000" stroke-opacity="0.7"/>
+        <circle cx="17" cy="15" r="9" fill="#2b1b05" stroke="#f0a000"/>
+        <text x="14" y="20" fill="#ffd166" font-size="15" font-weight="900">!</text>
+        <text x="38" y="20" fill="#ffe6a3" font-size="13" font-weight="750">CI needs attention</text>
+      </g>
+
+      <g transform="translate(24 142)">
+        <rect width="276" height="30" rx="15" fill="#0d1f35" stroke="#60a5fa" stroke-opacity="0.7"/>
+        <circle cx="17" cy="15" r="9" fill="#0e243d" stroke="#60a5fa"/>
+        <path d="M11 15h12M19 11l4 4-4 4" fill="none" stroke="#bfdbfe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="38" y="20" fill="#dbeafe" font-size="13" font-weight="750">merge queue moving</text>
+      </g>
     </g>
   </g>
 
-  <g transform="translate(656 88)" filter="url(#softShadow)">
-    <rect width="402" height="332" rx="24" fill="#0f1117" fill-opacity="0.92" stroke="#2a2d33"/>
-    <rect x="1" y="1" width="400" height="44" rx="23" fill="#171a22"/>
-    <circle cx="26" cy="23" r="5" fill="#e5484d"/>
-    <circle cx="44" cy="23" r="5" fill="#f0a000"/>
-    <circle cx="62" cy="23" r="5" fill="#46a758"/>
-    <text x="90" y="29" fill="#ecedee" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif" font-size="15" font-weight="800">Pulley</text>
-    <text x="310" y="29" fill="#6c7075" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif" font-size="12">synced now</text>
+  <g transform="translate(376 78)">
+    <path d="M58 86C178 88 210 160 270 214C338 275 424 279 516 260" fill="none" stroke="#172033" stroke-width="19" stroke-linecap="round"/>
+    <path d="M58 86C178 88 210 160 270 214C338 275 424 279 516 260" fill="none" stroke="url(#ropeGrad)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M58 244C166 222 212 194 270 214" fill="none" stroke="#172033" stroke-width="19" stroke-linecap="round"/>
+    <path d="M58 244C166 222 212 194 270 214" fill="none" stroke="url(#ropeGrad)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="58" cy="86" r="52" fill="#111827" stroke="#334155" stroke-width="2.5"/>
+    <circle cx="58" cy="86" r="28" fill="#06080c" stroke="#93c5fd" stroke-width="4"/>
+    <circle cx="58" cy="86" r="8" fill="#e5edf8"/>
+    <circle cx="58" cy="244" r="36" fill="#101720" stroke="#334155" stroke-width="2"/>
+    <circle cx="58" cy="244" r="16" fill="#05070a" stroke="#60a5fa" stroke-width="3"/>
+    <circle cx="270" cy="214" r="10" fill="#60a5fa" stroke="#dbeafe" stroke-width="2"/>
+    <circle cx="516" cy="260" r="10" fill="#46a758" stroke="#d9fbe2" stroke-width="2"/>
+  </g>
 
-    <g transform="translate(24 66)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif">
-      <rect width="354" height="64" rx="16" fill="#101813" stroke="#46a758" stroke-opacity="0.32"/>
-      <rect width="4" height="64" rx="2" fill="#46a758"/>
-      <text x="20" y="26" fill="#ecedee" font-size="15" font-weight="800">Ready to Ship</text>
-      <text x="20" y="47" fill="#9ba1a6" font-size="13">security-fix #842 cleared review and CI</text>
-      <text x="304" y="38" fill="#7ee29a" font-size="13" font-weight="800">ship</text>
+  <g transform="translate(604 58)" filter="url(#softShadow)">
+    <rect width="488" height="330" rx="28" fill="url(#panelGrad)" stroke="#313846"/>
+    <rect x="1" y="1" width="486" height="50" rx="27" fill="#171d28"/>
+    <circle cx="28" cy="26" r="5.5" fill="#e5484d"/>
+    <circle cx="48" cy="26" r="5.5" fill="#f0a000"/>
+    <circle cx="68" cy="26" r="5.5" fill="#46a758"/>
+    <text x="96" y="32" fill="#f1f5f9" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif" font-size="16" font-weight="850">Pulley</text>
+    <text x="372" y="32" fill="#a7b0be" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif" font-size="13" font-weight="650">synced now</text>
+
+    <g transform="translate(26 72)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif">
+      <rect width="436" height="70" rx="18" fill="#101a14" stroke="#46a758" stroke-opacity="0.58"/>
+      <rect width="5" height="70" rx="2.5" fill="#46a758"/>
+      <circle cx="31" cy="35" r="15" fill="#14251a" stroke="#46a758"/>
+      <path d="M23 35l6 6 12-15" fill="none" stroke="#7ee29a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="58" y="29" fill="#f1f5f9" font-size="16" font-weight="850">Ready to ship</text>
+      <text x="58" y="51" fill="#b6beca" font-size="13.5">security-fix #842 cleared review and CI</text>
+      <text x="374" y="42" fill="#d9fbe2" font-size="13" font-weight="850">ship</text>
     </g>
 
-    <g transform="translate(24 146)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif">
-      <rect width="354" height="64" rx="16" fill="#1a1208" stroke="#f0a000" stroke-opacity="0.34"/>
-      <rect width="4" height="64" rx="2" fill="#f0a000"/>
-      <text x="20" y="26" fill="#ecedee" font-size="15" font-weight="800">CI Needs Attention</text>
-      <text x="20" y="47" fill="#9ba1a6" font-size="13">pipeline-check #856 is waiting on tests</text>
-      <text x="296" y="38" fill="#ffd166" font-size="13" font-weight="800">watch</text>
+    <g transform="translate(26 158)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif">
+      <rect width="436" height="70" rx="18" fill="#211506" stroke="#f0a000" stroke-opacity="0.62"/>
+      <rect width="5" height="70" rx="2.5" fill="#f0a000"/>
+      <circle cx="31" cy="35" r="15" fill="#2b1b05" stroke="#f0a000"/>
+      <text x="27" y="42" fill="#ffd166" font-size="22" font-weight="900">!</text>
+      <text x="58" y="29" fill="#f1f5f9" font-size="16" font-weight="850">CI needs attention</text>
+      <text x="58" y="51" fill="#c7c0b4" font-size="13.5">pipeline-check #856 is waiting on tests</text>
+      <text x="366" y="42" fill="#ffe6a3" font-size="13" font-weight="850">watch</text>
     </g>
 
-    <g transform="translate(24 226)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif">
-      <rect width="354" height="64" rx="16" fill="#101727" stroke="#60a5fa" stroke-opacity="0.34"/>
-      <rect width="4" height="64" rx="2" fill="#60a5fa"/>
-      <text x="20" y="26" fill="#ecedee" font-size="15" font-weight="800">Merge Queue</text>
-      <text x="20" y="47" fill="#9ba1a6" font-size="13">release-train #861 is position 2</text>
-      <text x="294" y="38" fill="#93c5fd" font-size="13" font-weight="800">queue</text>
+    <g transform="translate(26 244)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif">
+      <rect width="436" height="60" rx="18" fill="#101827" stroke="#60a5fa" stroke-opacity="0.6"/>
+      <rect width="5" height="60" rx="2.5" fill="#60a5fa"/>
+      <circle cx="31" cy="30" r="15" fill="#0e243d" stroke="#60a5fa"/>
+      <path d="M22 30h18M34 23l7 7-7 7" fill="none" stroke="#bfdbfe" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="58" y="25" fill="#f1f5f9" font-size="16" font-weight="850">Merge queue</text>
+      <text x="58" y="46" fill="#b6beca" font-size="13.5">release-train #861 is position 2</text>
+      <text x="363" y="36" fill="#dbeafe" font-size="13" font-weight="850">queue</text>
     </g>
   </g>
 
-  <g transform="translate(842 70)" filter="url(#softShadow)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif">
-    <rect width="226" height="70" rx="18" fill="#111214" stroke="#2a2d33"/>
-    <circle cx="34" cy="35" r="17" fill="#14251a" stroke="#46a758" stroke-opacity="0.48"/>
-    <path d="M25 35l6 6 12-14" fill="none" stroke="#46a758" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="63" y="31" fill="#ecedee" font-size="14" font-weight="800">Approved</text>
-    <text x="63" y="50" fill="#9ba1a6" font-size="12">human review landed</text>
+  <g transform="translate(772 372)" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif" filter="url(#softShadow)">
+    <rect width="300" height="52" rx="18" fill="#101319" stroke="#313846"/>
+    <circle cx="29" cy="26" r="13" fill="#14251a" stroke="#46a758"/>
+    <path d="M23 26l4 4 8-10" fill="none" stroke="#7ee29a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="52" y="23" fill="#f1f5f9" font-size="13.5" font-weight="850">quiet toast</text>
+    <text x="52" y="39" fill="#a7b0be" font-size="12">only when momentum changes</text>
   </g>
 </svg>
