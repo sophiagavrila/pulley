@@ -1,37 +1,44 @@
 #!/bin/bash
-# Toggle PR Dashboard auto-launch on/off.
-PLIST="$HOME/Library/LaunchAgents/com.sophiagavrila.pr-dashboard.plist"
-LABEL="com.sophiagavrila.pr-dashboard"
+# Toggle Pulley auto-launch on/off.
+PLIST="$HOME/Library/LaunchAgents/com.sophiagavrila.pulley.plist"
+LABEL="com.sophiagavrila.pulley"
+APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 case "${1:-}" in
   on)
     launchctl load "$PLIST" 2>/dev/null
     launchctl start "$LABEL" 2>/dev/null
-    echo "PR Dashboard: ON"
+    echo "Pulley: ON"
     ;;
   off)
     launchctl stop "$LABEL" 2>/dev/null
     launchctl unload "$PLIST" 2>/dev/null
-    pkill -f "Electron.*pr-dashboard" 2>/dev/null
+    pids="$(pgrep -f "Electron.*${APP_DIR}" 2>/dev/null || true)"
+    if [ -n "$pids" ]; then
+      kill $pids 2>/dev/null || true
+    fi
     sleep 1
     # Force-kill anything still alive (single-instance lock will reject a relaunch otherwise)
-    pkill -9 -f "Electron.*pr-dashboard" 2>/dev/null
-    echo "PR Dashboard: OFF"
+    pids="$(pgrep -f "Electron.*${APP_DIR}" 2>/dev/null || true)"
+    if [ -n "$pids" ]; then
+      kill -9 $pids 2>/dev/null || true
+    fi
+    echo "Pulley: OFF"
     ;;
   status)
     if launchctl list "$LABEL" &>/dev/null; then
-      if pgrep -f "Electron.*pr-dashboard" &>/dev/null; then
-        echo "PR Dashboard: RUNNING"
+      if pgrep -f "Electron.*${APP_DIR}" &>/dev/null; then
+        echo "Pulley: RUNNING"
       else
-        echo "PR Dashboard: ENABLED (not running)"
+        echo "Pulley: ENABLED (not running)"
       fi
     else
-      echo "PR Dashboard: OFF"
+      echo "Pulley: OFF"
     fi
     ;;
   *)
     # Toggle: if running → off, else → on
-    if pgrep -f "Electron.*pr-dashboard" &>/dev/null; then
+    if pgrep -f "Electron.*${APP_DIR}" &>/dev/null; then
       "$0" off
     else
       "$0" on

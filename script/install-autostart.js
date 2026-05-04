@@ -3,7 +3,7 @@ const os = require('os');
 const path = require('path');
 const { execFileSync } = require('child_process');
 
-const LABEL = 'com.sophiagavrila.pr-dashboard';
+const LABEL = 'com.sophiagavrila.pulley';
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const LAUNCH_AGENTS_DIR = path.join(os.homedir(), 'Library', 'LaunchAgents');
 const PLIST_PATH = path.join(LAUNCH_AGENTS_DIR, `${LABEL}.plist`);
@@ -40,9 +40,9 @@ const plist = `<?xml version="1.0" encoding="UTF-8"?>
         <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
     </dict>
     <key>StandardOutPath</key>
-    <string>/tmp/pr-dashboard.log</string>
+    <string>/tmp/pulley.log</string>
     <key>StandardErrorPath</key>
-    <string>/tmp/pr-dashboard.err</string>
+    <string>/tmp/pulley.err</string>
 </dict>
 </plist>
 `;

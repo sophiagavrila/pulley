@@ -1,8 +1,12 @@
 {
-  "name": "pr-dashboard",
+  "name": "pulley",
   "version": "1.0.0",
-  "description": "macOS menu bar PR review dashboard",
+  "description": "A calmer macOS menu bar companion for GitHub pull request awareness",
   "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sophiagavrila/pulley.git"
+  },
   "scripts": {
     "start": "electron .",
     "install-autostart": "node script/install-autostart.js",

@@ -11,8 +11,8 @@ const NOTIFICATION_GAP = 8;
 const NOTIFICATION_MARGIN = 16;
 const NOTIFICATION_DURATION = 6000; // 6 seconds
 
-const PLIST_PATH = path.join(app.getPath('home'), 'Library/LaunchAgents/com.sophiagavrila.pr-dashboard.plist');
-const PLIST_LABEL = 'com.sophiagavrila.pr-dashboard';
+const PLIST_PATH = path.join(app.getPath('home'), 'Library/LaunchAgents/com.sophiagavrila.pulley.plist');
+const PLIST_LABEL = 'com.sophiagavrila.pulley';
 
 function isLaunchAtLogin() {
   try {
@@ -454,7 +454,7 @@ function createMenubar() {
   });
 
   mb.on('ready', () => {
-    console.log('PR Dashboard ready in menu bar');
+    console.log('Pulley ready in menu bar');
 
     // Renderer error logging
     if (mb.window) {
@@ -541,7 +541,7 @@ function createMenubar() {
 
     // Fall back if no data
     if (samples.length === 0) {
-      samples.push({ title: 'Test Notification', body: 'PR Dashboard is working', url: null, type: 'info' });
+      samples.push({ title: 'Test Notification', body: 'Pulley is working', url: null, type: 'info' });
     }
 
     // Fire up to 3 with stagger

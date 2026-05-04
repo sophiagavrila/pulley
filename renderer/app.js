@@ -237,7 +237,7 @@ function render(data) {
   html += `
     <div class="header">
       <div class="header-left">
-        <h1>PR Dashboard</h1>
+        <h1>Pulley</h1>
         <div class="subtitle">${totalAuthored} open &middot; ${totalReviewRequests} to review</div>
       </div>
       <div class="header-right">
@@ -251,7 +251,7 @@ function render(data) {
       </div>
     </div>
     <div class="settings-bar">
-      <label class="toggle-label" title="Start PR Dashboard when you log in">
+      <label class="toggle-label" title="Start Pulley when you log in">
         <span class="toggle-text">Launch at Login</span>
         <span class="toggle-switch${launchAtLogin ? ' on' : ''}" id="launchToggle">
           <span class="toggle-knob"></span>

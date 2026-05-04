@@ -3,7 +3,7 @@ const os = require('os');
 const path = require('path');
 const { execFileSync } = require('child_process');
 
-const LABEL = 'com.sophiagavrila.pr-dashboard';
+const LABEL = 'com.sophiagavrila.pulley';
 const PLIST_PATH = path.join(os.homedir(), 'Library', 'LaunchAgents', `${LABEL}.plist`);
 
 try {
