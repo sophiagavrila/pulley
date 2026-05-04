@@ -1,19 +1,5 @@
-const fs = require('fs');
-const os = require('os');
-const path = require('path');
-const { execFileSync } = require('child_process');
+const { LABEL, setLaunchAtLogin } = require('../lib/launch-at-login');
 
-const LABEL = 'com.sophiagavrila.pulley';
-const PLIST_PATH = path.join(os.homedir(), 'Library', 'LaunchAgents', `${LABEL}.plist`);
-
-try {
-  execFileSync('launchctl', ['unload', PLIST_PATH], { stdio: 'ignore' });
-} catch {
-  // It is fine if the agent was already unloaded.
-}
-
-if (fs.existsSync(PLIST_PATH)) {
-  fs.rmSync(PLIST_PATH);
-}
+setLaunchAtLogin(false);
 
 console.log(`Uninstalled ${LABEL}`);

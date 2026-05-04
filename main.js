@@ -1,8 +1,8 @@
 const { app, ipcMain, shell, screen, BrowserWindow } = require('electron');
 const { menubar } = require('menubar');
 const path = require('path');
-const { execFile } = require('child_process');
 const { fetchPRData } = require('./lib/fetch-prs');
+const { isLaunchAtLogin, setLaunchAtLogin } = require('./lib/launch-at-login');
 
 const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
 const NOTIFICATION_WIDTH = 360;
@@ -11,29 +11,12 @@ const NOTIFICATION_GAP = 8;
 const NOTIFICATION_MARGIN = 16;
 const NOTIFICATION_DURATION = 6000; // 6 seconds
 
-const PLIST_PATH = path.join(app.getPath('home'), 'Library/LaunchAgents/com.sophiagavrila.pulley.plist');
-const PLIST_LABEL = 'com.sophiagavrila.pulley';
-
-function isLaunchAtLogin() {
+function updateLaunchAtLogin(enabled) {
   try {
-    const { execSync } = require('child_process');
-    const out = execSync(`launchctl list ${PLIST_LABEL} 2>/dev/null`, { encoding: 'utf8' });
-    return out.includes(PLIST_LABEL);
-  } catch {
-    return false;
-  }
-}
-
-function setLaunchAtLogin(enabled) {
-  const { execSync } = require('child_process');
-  try {
-    if (enabled) {
-      execSync(`launchctl load "${PLIST_PATH}"`, { encoding: 'utf8' });
-    } else {
-      execSync(`launchctl unload "${PLIST_PATH}"`, { encoding: 'utf8' });
-    }
+    return setLaunchAtLogin(enabled);
   } catch (e) {
     console.error('Failed to toggle launch at login:', e.message);
+    return isLaunchAtLogin();
   }
 }
 
@@ -455,6 +438,7 @@ function createMenubar() {
 
   mb.on('ready', () => {
     console.log('Pulley ready in menu bar');
+    mb.tray.setTitle('Pulley');
 
     // Renderer error logging
     if (mb.window) {
@@ -552,11 +536,9 @@ function createMenubar() {
 
   ipcMain.handle('get-launch-at-login', () => isLaunchAtLogin());
   ipcMain.handle('set-launch-at-login', (_event, enabled) => {
-    setLaunchAtLogin(enabled);
-    return isLaunchAtLogin();
+    return updateLaunchAtLogin(enabled);
   });
   ipcMain.handle('quit-app', () => {
-    setLaunchAtLogin(false);
     app.quit();
   });
 }
