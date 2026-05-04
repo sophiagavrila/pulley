@@ -1,0 +1,40 @@
+#!/bin/bash
+# Toggle PR Dashboard auto-launch on/off.
+PLIST="$HOME/Library/LaunchAgents/com.sophiagavrila.pr-dashboard.plist"
+LABEL="com.sophiagavrila.pr-dashboard"
+
+case "${1:-}" in
+  on)
+    launchctl load "$PLIST" 2>/dev/null
+    launchctl start "$LABEL" 2>/dev/null
+    echo "PR Dashboard: ON"
+    ;;
+  off)
+    launchctl stop "$LABEL" 2>/dev/null
+    launchctl unload "$PLIST" 2>/dev/null
+    pkill -f "Electron.*pr-dashboard" 2>/dev/null
+    sleep 1
+    # Force-kill anything still alive (single-instance lock will reject a relaunch otherwise)
+    pkill -9 -f "Electron.*pr-dashboard" 2>/dev/null
+    echo "PR Dashboard: OFF"
+    ;;
+  status)
+    if launchctl list "$LABEL" &>/dev/null; then
+      if pgrep -f "Electron.*pr-dashboard" &>/dev/null; then
+        echo "PR Dashboard: RUNNING"
+      else
+        echo "PR Dashboard: ENABLED (not running)"
+      fi
+    else
+      echo "PR Dashboard: OFF"
+    fi
+    ;;
+  *)
+    # Toggle: if running → off, else → on
+    if pgrep -f "Electron.*pr-dashboard" &>/dev/null; then
+      "$0" off
+    else
+      "$0" on
+    fi
+    ;;
+esac
